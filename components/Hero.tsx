@@ -42,9 +42,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="inline-block mb-8"
+            className="inline-block mb-8 px-2"
           >
-            <span className="py-1.5 px-4 rounded-full bg-bimini-primary/90 backdrop-blur-md border border-white/20 text-sm font-medium tracking-wider uppercase text-bimini-peach shadow-lg ring-1 ring-white/10">
+            <span className="py-1 px-3 sm:py-1.5 sm:px-4 rounded-full bg-bimini-primary/90 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide sm:tracking-wider uppercase text-bimini-peach shadow-lg ring-1 ring-white/10 whitespace-nowrap">
               Exclusive Leasing for Lee Health Employees
             </span>
           </motion.div>
