@@ -39,7 +39,7 @@ export function LeeHealthBenefits() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
           >
             <span className="text-bimini-gold font-medium tracking-widest uppercase text-xs mb-3 block">Exclusive Convenience</span>
             <h2 className="text-3xl md:text-5xl font-light text-bimini-primary mb-6">
@@ -58,7 +58,7 @@ export function LeeHealthBenefits() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -5, borderColor: "rgba(236, 194, 38, 0.3)" }}
                 className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-default"
@@ -77,7 +77,7 @@ export function LeeHealthBenefits() {
           <motion.div 
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
             className="relative h-[640px] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 group"
           >
             <div 
@@ -93,7 +93,7 @@ export function LeeHealthBenefits() {
                 <motion.div 
                   initial={{ width: 0 }}
                   whileInView={{ width: 48 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 1 }}
                   transition={{ delay: 0.5, duration: 0.8 }}
                   className="h-1 bg-bimini-gold mb-6" 
                 />

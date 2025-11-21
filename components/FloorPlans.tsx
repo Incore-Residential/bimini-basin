@@ -29,7 +29,7 @@ export function FloorPlans() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
           >
             <div className="inline-block w-12 h-12 rounded-full border border-bimini-gold/30 flex items-center justify-center mb-8">
                <div className="w-1.5 h-1.5 rounded-full bg-bimini-gold" />
@@ -66,7 +66,7 @@ export function FloorPlans() {
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
             className="relative"
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 border border-white/10 relative shadow-2xl group">

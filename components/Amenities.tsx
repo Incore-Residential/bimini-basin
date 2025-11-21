@@ -66,7 +66,7 @@ export function Amenities() {
               key={index}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative group overflow-hidden rounded-3xl bg-gray-100 ${item.className} shadow-md hover:shadow-xl transition-all duration-500`}
             >
