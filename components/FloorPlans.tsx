@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   "Waterfront balcony views",
@@ -52,9 +53,14 @@ export function FloorPlans() {
               ))}
             </div>
 
-            <button className="px-10 py-4 bg-white text-bimini-primary rounded-full font-medium text-lg hover:bg-bimini-gold hover:text-bimini-primary transition-all shadow-lg hover:shadow-bimini-gold/20 hover:-translate-y-0.5">
+            <Link 
+              href="https://showmojo.com/57925900f8/l/p/72794"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-10 py-4 bg-white text-bimini-primary rounded-full font-medium text-lg hover:bg-bimini-gold hover:text-bimini-primary transition-all shadow-lg hover:shadow-bimini-gold/20 hover:-translate-y-0.5"
+            >
               View Floor Plans
-            </button>
+            </Link>
           </motion.div>
 
           <motion.div
