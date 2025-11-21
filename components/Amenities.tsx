@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 const amenities = [
   {
@@ -36,6 +37,8 @@ const amenities = [
 ];
 
 export function Amenities() {
+  const isMobile = useIsMobile();
+  
   return (
     <section id="amenities" className="py-24 bg-white relative">
       {/* Decorative Blobs */}
@@ -61,34 +64,39 @@ export function Amenities() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-3 gap-4 h-[1200px] md:h-[800px]">
-          {amenities.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              className={`relative group overflow-hidden rounded-3xl bg-gray-100 ${item.className} shadow-md hover:shadow-xl transition-shadow duration-500`}
-            >
-              <div 
-                className="absolute inset-0 bg-cover bg-center will-change-transform md:transition-transform md:duration-1000 md:ease-out md:group-hover:scale-110"
-                style={{ 
-                  backgroundImage: `url('${item.image}')`,
-                  transform: 'translateZ(0)',
-                  backfaceVisibility: 'hidden'
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-bimini-primary/90 via-bimini-primary/20 to-transparent opacity-80 md:group-hover:opacity-90 md:transition-opacity md:duration-500" />
-              
-              <div className="absolute bottom-0 left-0 p-8 w-full will-change-transform md:transition-transform md:duration-500 md:group-hover:translate-y-[-10px]">
-                <div className="h-0.5 bg-bimini-gold mb-4 w-10" />
-                <h3 className="text-2xl text-white font-medium mb-2 drop-shadow-md">{item.title}</h3>
-                <p className="text-bimini-peach font-light text-sm md:text-base md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300 md:delay-75">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          {amenities.map((item, index) => {
+            const CardWrapper = isMobile ? "div" : motion.div;
+            const animationProps = isMobile ? {} : {
+              initial: { opacity: 0 },
+              whileInView: { opacity: 1 },
+              viewport: { once: true, amount: 0.2 },
+              transition: { duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] as const }
+            };
+            
+            return (
+              <CardWrapper
+                key={index}
+                {...animationProps}
+                className={`relative group overflow-hidden rounded-3xl bg-gray-100 ${item.className} shadow-md md:hover:shadow-xl md:transition-shadow md:duration-500`}
+              >
+                <div 
+                  className="absolute inset-0 bg-cover bg-center md:will-change-transform md:transition-transform md:duration-1000 md:ease-out md:group-hover:scale-110"
+                  style={{ 
+                    backgroundImage: `url('${item.image}')`,
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bimini-primary/90 via-bimini-primary/20 to-transparent opacity-80 md:group-hover:opacity-90 md:transition-opacity md:duration-500" />
+                
+                <div className="absolute bottom-0 left-0 p-8 w-full md:transition-transform md:duration-500 md:group-hover:translate-y-[-10px]">
+                  <div className="h-0.5 bg-bimini-gold mb-4 w-10" />
+                  <h3 className="text-2xl text-white font-medium mb-2 drop-shadow-md">{item.title}</h3>
+                  <p className="text-bimini-peach font-light text-sm md:text-base">
+                    {item.description}
+                  </p>
+                </div>
+              </CardWrapper>
+            );
+          })}
         </div>
       </div>
     </section>
