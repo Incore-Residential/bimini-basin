@@ -15,60 +15,56 @@ export function Navbar() {
     setScrolled(latest > 50);
   });
 
+  const NavLink = ({ href, children, scrolled }: { href: string; children: React.ReactNode; scrolled: boolean }) => (
+    <Link 
+      href={href} 
+      className={`group relative text-sm font-medium transition-colors ${
+        scrolled ? "text-bimini-primary" : "text-white/90"
+      }`}
+    >
+      {children}
+      <span className={`absolute -bottom-1 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${
+        scrolled ? "bg-bimini-gold" : "bg-white"
+      }`} />
+    </Link>
+  );
+
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className={`fixed w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-sm py-2" 
+          ? "bg-white/90 backdrop-blur-xl shadow-sm py-3 border-b border-white/20" 
           : "bg-transparent py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="relative block w-48 h-12">
+            <Link href="/" className="relative block w-48 h-12 group">
               <Image 
                 src="/bimini-logo.svg" 
                 alt="Bimini Square" 
                 fill
-                className={`object-contain object-left transition-all duration-300 ${scrolled ? "brightness-0" : "brightness-0 invert"}`}
+                className={`object-contain object-left transition-all duration-500 ${
+                  scrolled ? "brightness-0" : "brightness-0 invert"
+                } group-hover:opacity-80`}
               />
             </Link>
           </div>
           <div className="hidden md:flex space-x-8 items-center">
-            <Link 
-              href="#amenities" 
-              className={`text-sm font-medium transition-colors ${
-                scrolled ? "text-bimini-primary hover:text-bimini-gold" : "text-white/90 hover:text-white"
-              }`}
-            >
-              Amenities
-            </Link>
-            <Link 
-              href="#health" 
-              className={`text-sm font-medium transition-colors ${
-                scrolled ? "text-bimini-primary hover:text-bimini-gold" : "text-white/90 hover:text-white"
-              }`}
-            >
-              Lee Health Access
-            </Link>
-            <Link 
-              href="#floorplans" 
-              className={`text-sm font-medium transition-colors ${
-                scrolled ? "text-bimini-primary hover:text-bimini-gold" : "text-white/90 hover:text-white"
-              }`}
-            >
-              Residences
-            </Link>
+            <NavLink href="#amenities" scrolled={scrolled}>Amenities</NavLink>
+            <NavLink href="#health" scrolled={scrolled}>Lee Health Access</NavLink>
+            <NavLink href="#floorplans" scrolled={scrolled}>Residences</NavLink>
+            
             <Link
               href="#contact"
-              className={`px-6 py-2.5 text-sm font-medium rounded-full transition-all shadow-lg hover:shadow-xl ${
+              className={`px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 ${
                 scrolled 
                   ? "bg-bimini-primary text-white hover:bg-bimini-secondary" 
-                  : "bg-white text-bimini-primary hover:bg-gray-100"
+                  : "bg-white text-bimini-primary hover:bg-gray-50"
               }`}
             >
               Schedule Tour

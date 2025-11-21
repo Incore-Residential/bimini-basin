@@ -14,16 +14,16 @@ export function Contact() {
             </p>
             
             <div className="space-y-8">
-              <div className="border-l-2 border-bimini-gold pl-6">
-                <h4 className="text-sm font-bold text-bimini-primary uppercase tracking-widest mb-2">Visit Us</h4>
+              <div className="border-l-2 border-bimini-gold pl-6 hover:pl-8 transition-all duration-300 group cursor-default">
+                <h4 className="text-sm font-bold text-bimini-primary uppercase tracking-widest mb-2 group-hover:text-bimini-secondary transition-colors">Visit Us</h4>
                 <p className="text-gray-600 font-light">440 Cape Coral Parkway East<br />Cape Coral, FL 33904</p>
               </div>
-              <div className="border-l-2 border-bimini-peach pl-6">
-                <h4 className="text-sm font-bold text-bimini-primary uppercase tracking-widest mb-2">Call Us</h4>
+              <div className="border-l-2 border-bimini-peach pl-6 hover:pl-8 transition-all duration-300 group cursor-default">
+                <h4 className="text-sm font-bold text-bimini-primary uppercase tracking-widest mb-2 group-hover:text-bimini-secondary transition-colors">Call Us</h4>
                 <p className="text-gray-600 font-light">(239) 342-4313</p>
               </div>
-              <div className="border-l-2 border-bimini-secondary pl-6">
-                <h4 className="text-sm font-bold text-bimini-primary uppercase tracking-widest mb-2">Leasing Office Hours</h4>
+              <div className="border-l-2 border-bimini-secondary pl-6 hover:pl-8 transition-all duration-300 group cursor-default">
+                <h4 className="text-sm font-bold text-bimini-primary uppercase tracking-widest mb-2 group-hover:text-bimini-secondary transition-colors">Leasing Office Hours</h4>
                 <p className="text-gray-600 font-light">Weekdays: 9:00 AM - 6:00 PM<br />Saturday: By Appointment Only<br />Sunday: Closed</p>
               </div>
             </div>
@@ -32,30 +32,31 @@ export function Contact() {
           <div className="lg:w-1/2 bg-white p-8 md:p-10 rounded-2xl shadow-lg border border-gray-100">
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                  <input type="text" id="firstName" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-bimini-primary focus:border-transparent transition-all outline-none" />
+                <div className="group">
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-bimini-primary transition-colors">First Name</label>
+                  <input type="text" id="firstName" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:ring-1 focus:ring-bimini-primary focus:border-bimini-primary transition-all duration-300 outline-none shadow-sm focus:shadow-md" />
                 </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                  <input type="text" id="lastName" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-bimini-primary focus:border-transparent transition-all outline-none" />
+                <div className="group">
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-bimini-primary transition-colors">Last Name</label>
+                  <input type="text" id="lastName" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:ring-1 focus:ring-bimini-primary focus:border-bimini-primary transition-all duration-300 outline-none shadow-sm focus:shadow-md" />
                 </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
-                <input type="email" id="email" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:ring-2 focus:ring-bimini-primary focus:border-transparent transition-all outline-none" />
+              <div className="group">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 group-focus-within:text-bimini-primary transition-colors">Email Address</label>
+                <input type="email" id="email" className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:bg-white focus:ring-1 focus:ring-bimini-primary focus:border-bimini-primary transition-all duration-300 outline-none shadow-sm focus:shadow-md" />
               </div>
-              <div className="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-100">
+              <div className="flex items-start p-4 bg-gray-50 rounded-lg border border-gray-100 hover:border-bimini-gold/30 transition-colors duration-300">
                 <div className="flex items-center h-5">
-                  <input id="leeHealth" type="checkbox" className="h-5 w-5 text-bimini-primary focus:ring-bimini-primary border-gray-300 rounded cursor-pointer" />
+                  <input id="leeHealth" type="checkbox" className="h-5 w-5 text-bimini-primary focus:ring-bimini-primary border-gray-300 rounded cursor-pointer transition-colors" />
                 </div>
                 <label htmlFor="leeHealth" className="ml-3 block text-sm text-gray-600 cursor-pointer select-none">
                   <span className="font-medium text-bimini-primary">Lee Health Employee?</span>
                   <span className="block text-xs mt-0.5">I am interested in exclusive leasing offers.</span>
                 </label>
               </div>
-              <button type="submit" className="w-full py-4 bg-bimini-primary text-white rounded-lg font-medium hover:bg-bimini-secondary transition-all shadow-lg hover:shadow-xl">
-                Request Information
+              <button type="submit" className="w-full py-4 bg-bimini-primary text-white rounded-lg font-medium hover:bg-bimini-secondary transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 relative overflow-hidden group">
+                <span className="relative z-10">Request Information</span>
+                <div className="absolute inset-0 bg-white/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out" />
               </button>
             </form>
           </div>
@@ -66,8 +67,14 @@ export function Contact() {
             &copy; 2025 Bimini Square. All Rights Reserved.
           </div>
           <div className="flex space-x-8">
-            <a href="#" className="hover:text-bimini-primary transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-bimini-primary transition-colors">Pet Policy</a>
+            <a href="#" className="hover:text-bimini-primary transition-colors relative group">
+              Privacy Policy
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-bimini-primary transition-all group-hover:w-full" />
+            </a>
+            <a href="#" className="hover:text-bimini-primary transition-colors relative group">
+              Pet Policy
+              <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-bimini-primary transition-all group-hover:w-full" />
+            </a>
           </div>
         </div>
       </div>

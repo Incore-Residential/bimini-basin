@@ -18,7 +18,7 @@ export function FloorPlans() {
       {/* Deep Ocean Gradient Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-[#1e3d42] via-bimini-primary to-[#0f2023]" />
       
-      {/* Subtle Texture Overlay (simulating noise/grain via SVG or just subtle elements) */}
+      {/* Subtle Texture Overlay */}
       <div className="absolute inset-0 opacity-[0.03]" 
            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} 
       />
@@ -66,9 +66,9 @@ export function FloorPlans() {
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 border border-white/10 relative shadow-2xl group">
                <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                style={{ backgroundImage: "url('https://images.unsplash.com/photo-1512918760532-3ed64bc80409?q=80&w=2940&auto=format&fit=crop')" }}
+                style={{ backgroundImage: "url('/kitchen-interior.jpg')" }}
               />
-              <div className="absolute inset-0 bg-bimini-primary/30 mix-blend-multiply group-hover:bg-bimini-primary/10 transition-all duration-500" />
+              <div className="absolute inset-0 bg-bimini-primary/10 mix-blend-multiply group-hover:bg-transparent transition-all duration-500" />
             </div>
             
             {/* Decorative elements - Luxe Glows */}

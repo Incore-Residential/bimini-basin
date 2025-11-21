@@ -6,7 +6,7 @@ const amenities = [
   {
     title: "Infinity Rooftop Pool",
     description: "Drink up panoramic water views from our resort-style pool.",
-    image: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2940&auto=format&fit=crop",
+    image: "/infinity-pool-rooftop.jpg",
     className: "md:col-span-2 md:row-span-2"
   },
   {
@@ -18,7 +18,7 @@ const amenities = [
   {
     title: "Water Access",
     description: "Seamless access via boat slip, kayaks, and paddleboards.",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2940&auto=format&fit=crop",
+    image: "/water-acces.jpg",
     className: "md:col-span-1 md:row-span-1"
   },
   {

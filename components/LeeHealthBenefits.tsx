@@ -60,9 +60,10 @@ export function LeeHealthBenefits() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-gray-100 group hover:-translate-y-1"
+                whileHover={{ y: -5, borderColor: "rgba(236, 194, 38, 0.3)" }}
+                className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-default"
               >
-                <div className="w-14 h-14 bg-bimini-primary/5 rounded-xl flex items-center justify-center mb-6 text-bimini-primary group-hover:bg-bimini-primary group-hover:text-bimini-gold transition-colors shadow-sm">
+                <div className="w-14 h-14 bg-bimini-primary/5 rounded-xl flex items-center justify-center mb-6 text-bimini-primary group-hover:bg-bimini-primary group-hover:text-bimini-gold transition-colors shadow-sm duration-300">
                   <benefit.icon size={28} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-medium text-bimini-primary mb-3">{benefit.title}</h3>
@@ -77,10 +78,10 @@ export function LeeHealthBenefits() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative h-[640px] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5"
+            className="relative h-[640px] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 group"
           >
             <div 
-              className="absolute inset-0 bg-gray-200"
+              className="absolute inset-0 bg-gray-200 transition-transform duration-1000 ease-out group-hover:scale-105"
               style={{
                 backgroundImage: "url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2940&auto=format&fit=crop')", 
                 backgroundSize: "cover",
@@ -89,7 +90,13 @@ export function LeeHealthBenefits() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bimini-primary/90 via-bimini-primary/20 to-transparent flex items-end p-10">
               <div className="text-white relative z-10">
-                <div className="w-12 h-1 bg-bimini-gold mb-6" />
+                <motion.div 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 48 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.5, duration: 0.8 }}
+                  className="h-1 bg-bimini-gold mb-6" 
+                />
                 <div className="text-sm font-bold uppercase tracking-widest mb-2 text-bimini-gold">Town Square</div>
                 <div className="text-3xl font-light leading-tight">Direct Access to <br />Lee Health Services</div>
               </div>
