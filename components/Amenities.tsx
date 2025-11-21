@@ -64,22 +64,26 @@ export function Amenities() {
           {amenities.map((item, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative group overflow-hidden rounded-3xl bg-gray-100 ${item.className} shadow-md hover:shadow-xl transition-all duration-500`}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className={`relative group overflow-hidden rounded-3xl bg-gray-100 ${item.className} shadow-md hover:shadow-xl transition-shadow duration-500`}
             >
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-110"
-                style={{ backgroundImage: `url('${item.image}')` }}
+                className="absolute inset-0 bg-cover bg-center will-change-transform md:transition-transform md:duration-1000 md:ease-out md:group-hover:scale-110"
+                style={{ 
+                  backgroundImage: `url('${item.image}')`,
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden'
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-bimini-primary/90 via-bimini-primary/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-bimini-primary/90 via-bimini-primary/20 to-transparent opacity-80 md:group-hover:opacity-90 md:transition-opacity md:duration-500" />
               
-              <div className="absolute bottom-0 left-0 p-8 w-full transform transition-transform duration-500 group-hover:translate-y-[-10px]">
-                <div className="w-10 h-0.5 bg-bimini-gold mb-4 w-0 group-hover:w-10 transition-all duration-500 ease-out" />
+              <div className="absolute bottom-0 left-0 p-8 w-full will-change-transform md:transition-transform md:duration-500 md:group-hover:translate-y-[-10px]">
+                <div className="h-0.5 bg-bimini-gold mb-4 w-10" />
                 <h3 className="text-2xl text-white font-medium mb-2 drop-shadow-md">{item.title}</h3>
-                <p className="text-bimini-peach font-light text-sm md:text-base opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                <p className="text-bimini-peach font-light text-sm md:text-base md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300 md:delay-75">
                   {item.description}
                 </p>
               </div>

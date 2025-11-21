@@ -37,9 +37,10 @@ export function LeeHealthBenefits() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <span className="text-bimini-gold font-medium tracking-widest uppercase text-xs mb-3 block">Exclusive Convenience</span>
             <h2 className="text-3xl md:text-5xl font-light text-bimini-primary mb-6">
@@ -56,12 +57,11 @@ export function LeeHealthBenefits() {
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5, borderColor: "rgba(236, 194, 38, 0.3)" }}
-                className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group cursor-default"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-sm md:hover:shadow-xl md:hover:-translate-y-1 transition-all duration-300 border border-gray-100 group cursor-default will-change-transform"
               >
                 <div className="w-14 h-14 bg-bimini-primary/5 rounded-xl flex items-center justify-center mb-6 text-bimini-primary group-hover:bg-bimini-primary group-hover:text-bimini-gold transition-colors shadow-sm duration-300">
                   <benefit.icon size={28} strokeWidth={1.5} />
@@ -75,28 +75,25 @@ export function LeeHealthBenefits() {
           </div>
           
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="relative h-[640px] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-black/5 group"
           >
             <div 
-              className="absolute inset-0 bg-gray-200 transition-transform duration-1000 ease-out group-hover:scale-105"
+              className="absolute inset-0 bg-gray-200 will-change-transform md:transition-transform md:duration-1000 md:ease-out md:group-hover:scale-105"
               style={{
                 backgroundImage: "url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2940&auto=format&fit=crop')", 
                 backgroundSize: "cover",
                 backgroundPosition: "center",
+                transform: 'translateZ(0)',
+                backfaceVisibility: 'hidden'
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-bimini-primary/90 via-bimini-primary/20 to-transparent flex items-end p-10">
               <div className="text-white relative z-10">
-                <motion.div 
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 48 }}
-                  viewport={{ once: true, amount: 1 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
-                  className="h-1 bg-bimini-gold mb-6" 
-                />
+                <div className="w-12 h-1 bg-bimini-gold mb-6" />
                 <div className="text-sm font-bold uppercase tracking-widest mb-2 text-bimini-gold">Town Square</div>
                 <div className="text-3xl font-light leading-tight">Direct Access to <br />Lee Health Services</div>
               </div>

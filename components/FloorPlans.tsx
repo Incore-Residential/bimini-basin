@@ -27,9 +27,10 @@ export function FloorPlans() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="inline-block w-12 h-12 rounded-full border border-bimini-gold/30 flex items-center justify-center mb-8">
                <div className="w-1.5 h-1.5 rounded-full bg-bimini-gold" />
@@ -64,17 +65,22 @@ export function FloorPlans() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             className="relative"
           >
             <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800 border border-white/10 relative shadow-2xl group">
                <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 group-hover:scale-105"
-                style={{ backgroundImage: "url('/kitchen-interior.jpg')" }}
+                className="absolute inset-0 bg-cover bg-center will-change-transform md:transition-transform md:duration-1000 md:group-hover:scale-105"
+                style={{ 
+                  backgroundImage: "url('/kitchen-interior.jpg')",
+                  transform: 'translateZ(0)',
+                  backfaceVisibility: 'hidden'
+                }}
               />
-              <div className="absolute inset-0 bg-bimini-primary/10 mix-blend-multiply group-hover:bg-transparent transition-all duration-500" />
+              <div className="absolute inset-0 bg-bimini-primary/10 mix-blend-multiply md:group-hover:bg-transparent md:transition-all md:duration-500" />
             </div>
             
             {/* Decorative elements - Luxe Glows */}
