@@ -61,8 +61,8 @@ export function Navbar() {
       height: 0,
       transition: {
         duration: 0.3,
-        ease: [0.22, 1, 0.36, 1],
-        when: "afterChildren",
+        ease: [0.22, 1, 0.36, 1] as const,
+        when: "afterChildren" as const,
         staggerChildren: 0.05,
         staggerDirection: -1
       }
@@ -72,8 +72,8 @@ export function Navbar() {
       height: "auto",
       transition: {
         duration: 0.5,
-        ease: [0.22, 1, 0.36, 1],
-        when: "beforeChildren",
+        ease: [0.22, 1, 0.36, 1] as const,
+        when: "beforeChildren" as const,
         staggerChildren: 0.05,
         delayChildren: 0.1
       }
