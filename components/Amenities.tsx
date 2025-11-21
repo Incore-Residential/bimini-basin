@@ -24,7 +24,7 @@ const amenities = [
   {
     title: "Pet Friendly",
     description: "Dog park and indoor pet spa for your furry friends.",
-    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=2940&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1534361960057-19889db9621e?q=80&w=2940&auto=format&fit=crop",
     className: "md:col-span-1 md:row-span-1"
   },
   {
