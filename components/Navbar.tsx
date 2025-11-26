@@ -111,6 +111,7 @@ export function Navbar() {
             <NavLink href="#health" scrolled={scrolled}>Lee Health Access</NavLink>
             <NavLink href="#amenities" scrolled={scrolled}>Amenities</NavLink>
             <NavLink href="#floorplans" scrolled={scrolled}>Residences</NavLink>
+            <NavLink href="#tours" scrolled={scrolled}>3D Tours</NavLink>
             
             <Link
               href="https://showmojo.com/57925900f8/l/p/72794"
@@ -172,6 +173,15 @@ export function Navbar() {
                   onClick={() => setIsOpen(false)}
                 >
                   Residences
+                </Link>
+              </motion.div>
+              <motion.div variants={itemVariants}>
+                <Link
+                  href="#tours"
+                  className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  3D Tours
                 </Link>
               </motion.div>
               <motion.div variants={itemVariants}>

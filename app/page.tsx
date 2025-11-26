@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { LeeHealthBenefits } from "@/components/LeeHealthBenefits";
 import { Amenities } from "@/components/Amenities";
 import { FloorPlans } from "@/components/FloorPlans";
+import { ThreeDTours } from "@/components/ThreeDTours";
 import { Contact } from "@/components/Contact";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <LeeHealthBenefits />
       <Amenities />
       <FloorPlans />
+      <ThreeDTours />
       <Contact />
     </main>
   );
