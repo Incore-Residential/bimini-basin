@@ -75,3 +75,4 @@ image-rendering: -webkit-optimize-contrast;
 - Cleaner, faster rendering pipeline
 - Maintains accessibility and SEO
 
+
