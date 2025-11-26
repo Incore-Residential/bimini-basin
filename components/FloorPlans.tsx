@@ -5,7 +5,7 @@ import { Check } from "lucide-react";
 import Link from "next/link";
 
 const features = [
-  "Waterfront balcony views",
+  "City balcony views",
   "Designer kitchens with islands",
   "Smart entry systems",
   "In-unit washer & dryer",
