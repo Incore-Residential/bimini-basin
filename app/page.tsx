@@ -5,6 +5,7 @@ import { Amenities } from "@/components/Amenities";
 import { FloorPlans } from "@/components/FloorPlans";
 import { ThreeDTours } from "@/components/ThreeDTours";
 import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <FloorPlans />
       <ThreeDTours />
       <Contact />
+      <Footer />
     </main>
   );
 }
