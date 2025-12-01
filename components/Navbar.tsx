@@ -32,6 +32,8 @@ function Logo({ className }: { className?: string }) {
   );
 }
 
+import { TopBanner } from "./TopBanner";
+
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -86,17 +88,20 @@ export function Navbar() {
   };
 
   return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed w-full z-50 transition-all duration-500 ${
-        scrolled 
-          ? "bg-white/90 backdrop-blur-xl shadow-sm py-3 border-b border-white/20" 
-          : "bg-transparent py-6"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="fixed w-full z-50 flex flex-col">
+      <TopBanner />
+      <motion.nav
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`w-full transition-all duration-500 ${
+          scrolled 
+            ? "bg-white/90 backdrop-blur-xl shadow-sm py-3 border-b border-white/20" 
+            : "bg-transparent py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="relative block w-48 h-12 group">
@@ -137,68 +142,70 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={menuVariants}
-            className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
-          >
-            <div className="px-4 pt-2 pb-6 space-y-2">
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="#health"
-                  className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Lee Health Access
-                </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="#amenities"
-                  className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Amenities
-                </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="#floorplans"
-                  className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Residences
-                </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="#tours"
-                  className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  3D Tours
-                </Link>
-              </motion.div>
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="https://showmojo.com/57925900f8/l/p/72794"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center mt-4 px-5 py-3 text-base font-medium text-white bg-bimini-primary rounded-lg hover:bg-bimini-secondary shadow-md active:scale-95 transition-all"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Schedule Tour
-                </Link>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={menuVariants}
+              className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
+            >
+              <div className="px-4 pt-2 pb-6 space-y-2">
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="#health"
+                    className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Lee Health Access
+                  </Link>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="#amenities"
+                    className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Amenities
+                  </Link>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="#floorplans"
+                    className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Residences
+                  </Link>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="#tours"
+                    className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    3D Tours
+                  </Link>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="https://showmojo.com/57925900f8/l/p/72794"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full text-center mt-4 px-5 py-3 text-base font-medium text-white bg-bimini-primary rounded-lg hover:bg-bimini-secondary shadow-md active:scale-95 transition-all"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Schedule Tour
+                  </Link>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </div>
   );
 }
+
