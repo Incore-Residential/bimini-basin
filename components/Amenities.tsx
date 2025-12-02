@@ -98,6 +98,13 @@ export function Amenities() {
             );
           })}
         </div>
+
+        {/* Lifestyle Summary */}
+        <div className="mt-16 max-w-4xl mx-auto bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-100 text-center">
+          <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed">
+            Enjoy the full Bimini Square lifestyle with the rooftop infinity pool and cabanas, grilling stations, waterfront lounges, hammock garden, firepit, bocce, dog park and indoor pet spa, a complete fitness center with sauna, walking paths, kayak and paddleboard access, resident club rooms, secure parking and high-speed WiFi, all included with a monthly Amenity Fee of <span className="text-bimini-primary font-medium whitespace-nowrap">$300</span>.
+          </p>
+        </div>
       </div>
     </section>
   );
