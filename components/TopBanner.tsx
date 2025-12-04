@@ -11,7 +11,7 @@ export function TopBanner() {
   return (
     <div className="bg-bimini-gold text-bimini-primary py-2.5 px-4 text-center relative z-50">
       <p className="text-xs sm:text-sm font-semibold tracking-wide pr-8">
-        Special pricing through the end of the year for Lee Health: <span className="font-bold">20% off published rates</span>
+        Special pricing for Lee Health Employees: <span className="font-bold">20% off published rates</span>
       </p>
       <button 
         onClick={() => setIsVisible(false)}
