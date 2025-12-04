@@ -7,8 +7,8 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 const benefits = [
   {
     icon: Clock,
-    title: "Zero Commute",
-    description: "Your new home is just steps away from work. Reclaim hours of your week and enjoy a stress-free 1-minute walk to the Lee Health outpatient clinic."
+    title: "Minimal Commute",
+    description: "Your new home is just steps away from work. Reclaim hours of your week and enjoy a stress-free 1-minute walk or just minutes away drive to other Lee health locations."
   },
   {
     icon: Heart,
