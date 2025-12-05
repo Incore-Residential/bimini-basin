@@ -1,6 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { PetPolicyModal } from "./PetPolicyModal";
+import { PrivacyPolicyModal } from "./PrivacyPolicyModal";
 
 function Logo({ className }: { className?: string }) {
   return (
@@ -30,8 +34,19 @@ function Logo({ className }: { className?: string }) {
 }
 
 export function Footer() {
+  const [isPetPolicyOpen, setIsPetPolicyOpen] = useState(false);
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+
   return (
     <footer className="bg-bimini-primary text-white py-20">
+      <PetPolicyModal
+        isOpen={isPetPolicyOpen}
+        onClose={() => setIsPetPolicyOpen(false)}
+      />
+      <PrivacyPolicyModal
+        isOpen={isPrivacyPolicyOpen}
+        onClose={() => setIsPrivacyPolicyOpen(false)}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center">
           {/* Oversized Logo */}
@@ -41,17 +56,30 @@ export function Footer() {
 
           <div className="flex flex-col md:flex-row items-center justify-between w-full border-t border-white/10 pt-8 text-sm text-gray-400">
             <div className="mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} Bimini Square. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Incore Residential. All Rights Reserved.
             </div>
-            <div className="flex space-x-8">
-              <Link href="#" className="hover:text-white transition-colors relative group">
+            <div className="flex items-center space-x-8">
+              <Image
+                src="/equal-housing-logo500.png"
+                alt="Equal Housing Opportunity"
+                width={24}
+                height={24}
+                className="w-6 h-6 opacity-60 hover:opacity-100 transition-opacity grayscale invert"
+              />
+              <button
+                onClick={() => setIsPrivacyPolicyOpen(true)}
+                className="hover:text-white transition-colors relative group text-left"
+              >
                 Privacy Policy
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white transition-all group-hover:w-full" />
-              </Link>
-              <Link href="#" className="hover:text-white transition-colors relative group">
+              </button>
+              <button
+                onClick={() => setIsPetPolicyOpen(true)}
+                className="hover:text-white transition-colors relative group text-left"
+              >
                 Pet Policy
                 <span className="absolute -bottom-0.5 left-0 w-0 h-px bg-white transition-all group-hover:w-full" />
-              </Link>
+              </button>
             </div>
           </div>
         </div>
