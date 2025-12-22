@@ -167,3 +167,4 @@ export function PrivacyPolicyModal({ isOpen, onClose }: PrivacyPolicyModalProps)
   );
 }
 
+
