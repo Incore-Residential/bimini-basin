@@ -40,7 +40,7 @@ export function FloorPlans() {
               <span className="text-bimini-peach font-serif italic">Waterfront Sanctuary</span>
             </h2>
             <p className="text-xl text-gray-300 font-light mb-10 leading-relaxed border-l border-white/10 pl-6">
-              Choose from our meticulously designed Studio, 1, 2, and 3-bedroom residences. Each home frames the colorful Cape Coral lifestyle with floor-to-ceiling windows and open-concept layouts.
+              Choose from our meticulously designed 1 and 2-bedroom residences. Each home frames the colorful Cape Coral lifestyle with floor-to-ceiling windows and open-concept layouts.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-12">
