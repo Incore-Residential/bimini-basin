@@ -116,6 +116,7 @@ export function Navbar() {
             <NavLink href="#health" scrolled={scrolled}>Lee Health Access</NavLink>
             <NavLink href="#amenities" scrolled={scrolled}>Amenities</NavLink>
             <NavLink href="#floorplans" scrolled={scrolled}>Residences</NavLink>
+            <NavLink href="#available-units" scrolled={scrolled}>Available Units</NavLink>
             <NavLink href="#tours" scrolled={scrolled}>3D Tours</NavLink>
             
             <Link
@@ -178,6 +179,15 @@ export function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     Residences
+                  </Link>
+                </motion.div>
+                <motion.div variants={itemVariants}>
+                  <Link
+                    href="#available-units"
+                    className="block px-3 py-3 text-base font-medium text-bimini-secondary hover:text-bimini-primary hover:bg-gray-50 rounded-lg transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Available Units
                   </Link>
                 </motion.div>
                 <motion.div variants={itemVariants}>
