@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { Phone } from "lucide-react";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
 
 export function Contact() {
   return (
@@ -14,7 +16,14 @@ export function Contact() {
           or learn more about our exclusive Lee Health employee offers.
         </p>
         
-        <div className="flex justify-center">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-3 px-10 py-5 border-2 border-bimini-primary text-bimini-primary text-lg font-medium rounded-full hover:bg-bimini-primary hover:text-white transition-all duration-300"
+          >
+            <Phone size={20} />
+            {PHONE_DISPLAY}
+          </a>
           <Link 
             href="https://showmojo.com/57925900f8/l/p/72794"
             target="_blank"

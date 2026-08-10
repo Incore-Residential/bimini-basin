@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import { Phone } from "lucide-react";
 import { useState } from "react";
 import { PetPolicyModal } from "./PetPolicyModal";
 import { PrivacyPolicyModal } from "./PrivacyPolicyModal";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
 
 function Logo({ className }: { className?: string }) {
   return (
@@ -50,9 +51,17 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-center">
           {/* Oversized Logo */}
-          <div className="w-full max-w-4xl mb-16 opacity-100">
+          <div className="w-full max-w-4xl mb-10 opacity-100">
             <Logo className="w-full h-auto text-white" />
           </div>
+
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 mb-12 text-bimini-peach hover:text-white transition-colors text-lg font-medium"
+          >
+            <Phone size={18} />
+            {PHONE_DISPLAY}
+          </a>
 
           <div className="flex flex-col md:flex-row items-center justify-between w-full border-t border-white/10 pt-8 text-sm text-gray-400">
             <div className="mb-4 md:mb-0">
