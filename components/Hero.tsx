@@ -15,7 +15,7 @@ export function Hero() {
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
-    <div ref={ref} className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden bg-bimini-primary">
+    <div ref={ref} className="relative min-h-svh flex items-center justify-center overflow-hidden bg-bimini-primary pt-44 pb-20">
       {/* Background Image with Parallax */}
       <motion.div 
         className="absolute inset-0 z-0"
@@ -44,7 +44,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="inline-block mb-8 px-2"
           >
-            <span className="py-1 px-3 sm:py-1.5 sm:px-4 rounded-full bg-bimini-primary/90 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide sm:tracking-wider uppercase text-bimini-peach shadow-lg ring-1 ring-white/10 whitespace-nowrap">
+            <span className="inline-block max-w-full py-1 px-3 sm:py-1.5 sm:px-4 rounded-full bg-bimini-primary/90 backdrop-blur-md border border-white/20 text-[10px] sm:text-xs md:text-sm font-medium tracking-wide sm:tracking-wider uppercase text-bimini-peach shadow-lg ring-1 ring-white/10 text-balance">
               Exclusive Leasing for Lee Health Employees
             </span>
           </motion.div>

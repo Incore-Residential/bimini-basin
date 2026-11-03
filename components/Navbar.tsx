@@ -34,16 +34,8 @@ function Logo({ className }: { className?: string }) {
 
 import { TopBanner } from "./TopBanner";
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 50);
-  });
-
-  const NavLink = ({ href, children, scrolled }: { href: string; children: React.ReactNode; scrolled: boolean }) => (
+function NavLink({ href, children, scrolled }: { href: string; children: React.ReactNode; scrolled: boolean }) {
+  return (
     <Link 
       href={href} 
       className={`group relative text-sm font-medium transition-colors ${
@@ -56,6 +48,16 @@ export function Navbar() {
       }`} />
     </Link>
   );
+}
+
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { scrollY } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    setScrolled(latest > 50);
+  });
 
   const menuVariants = {
     closed: {
@@ -112,7 +114,7 @@ export function Navbar() {
               />
             </Link>
           </div>
-          <div className="hidden md:flex space-x-8 items-center">
+          <div className="hidden lg:flex space-x-6 xl:space-x-8 items-center">
             <NavLink href="#health" scrolled={scrolled}>Lee Health Access</NavLink>
             <NavLink href="#amenities" scrolled={scrolled}>Amenities</NavLink>
             <NavLink href="#floorplans" scrolled={scrolled}>Residences</NavLink>
@@ -132,7 +134,7 @@ export function Navbar() {
               Schedule Tour
             </Link>
           </div>
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 transition-colors ${scrolled ? "text-bimini-primary" : "text-white"}`}
@@ -151,7 +153,7 @@ export function Navbar() {
               animate="open"
               exit="closed"
               variants={menuVariants}
-              className="md:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
+              className="lg:hidden bg-white border-b border-gray-100 overflow-hidden shadow-xl"
             >
               <div className="px-4 pt-2 pb-6 space-y-2">
                 <motion.div variants={itemVariants}>
