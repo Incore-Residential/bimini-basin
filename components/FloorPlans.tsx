@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import Link from "next/link";
+import { LISTINGS_URL } from "@/lib/contact";
 
 const features = [
   "City balcony views",
@@ -55,7 +56,7 @@ export function FloorPlans() {
             </div>
 
             <Link 
-              href="https://showmojo.com/57925900f8/l/p/72794"
+              href={LISTINGS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-10 py-4 bg-white text-bimini-primary rounded-full font-medium text-lg hover:bg-bimini-gold hover:text-bimini-primary transition-all shadow-lg hover:shadow-bimini-gold/20 hover:-translate-y-0.5"

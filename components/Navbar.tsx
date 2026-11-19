@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { LISTINGS_URL } from "@/lib/contact";
 
 function Logo({ className }: { className?: string }) {
   return (
@@ -122,7 +123,7 @@ export function Navbar() {
             <NavLink href="#tours" scrolled={scrolled}>3D Tours</NavLink>
             
             <Link
-              href="https://showmojo.com/57925900f8/l/p/72794"
+              href={LISTINGS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={`px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 ${
@@ -203,7 +204,7 @@ export function Navbar() {
                 </motion.div>
                 <motion.div variants={itemVariants}>
                   <Link
-                    href="https://showmojo.com/57925900f8/l/p/72794"
+                    href={LISTINGS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block w-full text-center mt-4 px-5 py-3 text-base font-medium text-white bg-bimini-primary rounded-lg hover:bg-bimini-secondary shadow-md active:scale-95 transition-all"

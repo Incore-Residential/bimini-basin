@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import Link from "next/link";
+import { LISTINGS_URL } from "@/lib/contact";
 
 export function Hero() {
   const ref = useRef(null);
@@ -88,7 +89,7 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-5 justify-center items-center"
           >
             <Link 
-              href="https://showmojo.com/57925900f8/l/p/72794"
+              href={LISTINGS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="relative overflow-hidden px-10 py-4 bg-bimini-gold text-bimini-primary rounded-full font-semibold text-lg transition-all shadow-xl hover:shadow-2xl hover:shadow-bimini-gold/20 hover:-translate-y-1 flex items-center gap-2 group"

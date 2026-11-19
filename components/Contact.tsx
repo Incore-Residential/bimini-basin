@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Phone } from "lucide-react";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
+import { LISTINGS_URL, PHONE_DISPLAY, PHONE_HREF } from "@/lib/contact";
 
 export function Contact() {
   return (
@@ -25,7 +25,7 @@ export function Contact() {
             {PHONE_DISPLAY}
           </a>
           <Link 
-            href="https://showmojo.com/57925900f8/l/p/72794"
+            href={LISTINGS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="group relative px-12 py-5 bg-bimini-primary text-white text-lg font-medium rounded-full overflow-hidden shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
